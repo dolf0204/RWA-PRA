@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="DiabetikWeb.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/AdminSite.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="mainContent">
+            <header>
+                <div id="banner"></div>
+                <div id="nav">
+                    <ul>
+                        <li>
+                            <asp:Menu ID="mnuKorisnici" runat="server" >
+                                <DynamicItemTemplate>
+                                    <%# Eval("Text") %>
+                                </DynamicItemTemplate>
+                                <Items>
+                                    <asp:MenuItem Text="Korisnici" Value="Korisnici">
+                                        <asp:MenuItem Text="Pregled" Value="Pregled" NavigateUrl="~/PregledKorisnika.aspx"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticItemTemplate>
+                                    <%# Eval("Text") %>
+                                </StaticItemTemplate>
+                            </asp:Menu>
+                        </li>
+                        <li>
+                            <asp:Menu ID="mnuNamirnice" runat="server">
+                                <DynamicItemTemplate>
+                                    <%# Eval("Text") %>
+                                </DynamicItemTemplate>
+                                <Items>
+                                    <asp:MenuItem Text="Namirnice" Value="Namirnice">
+                                        <asp:MenuItem Text="Pregled" Value="Pregled" NavigateUrl="~/PregledNamirnica.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Unos" Value="Unos" NavigateUrl="~/UnesiNamirnicu.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Izmjena" Value="Izmjena" NavigateUrl="~/UrediNamirnicu.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Brisanje" Value="Brisanje" NavigateUrl="~/ObrisiNamirnicu.aspx"></asp:MenuItem>
+
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticItemTemplate>
+                                    <%# Eval("Text") %>
+                                </StaticItemTemplate>
+                            </asp:Menu>
+                        </li>
+                        <li>
+                            <asp:Menu ID="mnuTipObroka" runat="server">
+                                <DynamicItemTemplate>
+                                    <%# Eval("Text") %>
+                                </DynamicItemTemplate>
+                                <Items>
+                                    <asp:MenuItem Text="Tip obroka" Value="TipObroka">
+                                        <asp:MenuItem Text="Pregled" Value="Pregled" NavigateUrl="~/PregledTipaObroka.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Unos" Value="Unos" NavigateUrl="~/UnesiTipObroka.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Izmjena" Value="Izmjena" NavigateUrl="~/UrediTipObroka.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Brisanje" Value="Brisanje" NavigateUrl="~/ObrisiTipObroka.aspx"></asp:MenuItem>
+
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticItemTemplate>
+                                    <%# Eval("Text") %>
+                                </StaticItemTemplate>
+                            </asp:Menu>
+                        </li>
+                        <li>
+                            <asp:Menu ID="mnuKombinacijaObroka" runat="server">
+                                <DynamicItemTemplate>
+                                    <%# Eval("Text") %>
+                                </DynamicItemTemplate>
+                                <Items>
+                                    <asp:MenuItem Text="Kombinacija Obroka" Value="KombinacijaObroka">
+                                        <asp:MenuItem Text="Pregled" Value="Pregled" NavigateUrl="~/PregledKombinacijeObroka.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Unos" Value="Unos" NavigateUrl=""></asp:MenuItem>
+                                        <asp:MenuItem Text="Izmjena" Value="Izmjena" NavigateUrl="~/UrediKombinacijuObroka.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Brisanje" Value="Brisanje"></asp:MenuItem>
+
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticItemTemplate>
+                                    <%# Eval("Text") %>
+                                </StaticItemTemplate>
+                            </asp:Menu>
+                        </li>
+                        <li>
+                            <asp:Menu ID="mnuMjerneJedinice" runat="server">
+                                <DynamicItemTemplate>
+                                    <%# Eval("Text") %>
+                                </DynamicItemTemplate>
+                                <Items>
+                                    <asp:MenuItem Text="Mjerne Jedinice" Value="MjerneJedinice">
+                                        <asp:MenuItem Text="Pregled" Value="Pregled" NavigateUrl="~/PregledMjernihJedinica.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Unos" Value="Unos" NavigateUrl="~/UnesiMjernuJedinicu.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Izmjena" Value="Izmjena" NavigateUrl="~/UrediMjerneJedinice.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Brisanje" Value="Brisanje" NavigateUrl="~/ObrisiMjerneJedinice.aspx"></asp:MenuItem>
+
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticItemTemplate>
+                                    <%# Eval("Text") %>
+                                </StaticItemTemplate>
+                            </asp:Menu>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </header>
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+           
+                <main>
+               
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+               
+            </main>
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <footer style="width:900px ; position:relative; margin-top:130px"  >
+                <%: DateTime.Now.ToLongDateString() %>  
+            </footer>
+
+        </div>
+    </form>
+</body>
+</html>
